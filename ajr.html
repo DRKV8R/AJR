@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJR DISCOS | MEDIA MANAGEMENT - Proposal from David Hamilton</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        /* Animation Styles */
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .slide-in-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .blur-in {
+            opacity: 0;
+            filter: blur(10px);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .animate-in {
+            opacity: 1;
+            transform: translateX(0) translateY(0) scale(1);
+            filter: blur(0px);
+        }
+        /* Stagger delays */
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-400 { transition-delay: 0.4s; }
+        .delay-500 { transition-delay: 0.5s; }
+        .delay-600 { transition-delay: 0.6s; }
+        .delay-700 { transition-delay: 0.7s; }
+        .delay-800 { transition-delay: 0.8s; }
+        .delay-900 { transition-delay: 0.9s; }
+        .delay-1000 { transition-delay: 1s; }
+    </style>
+</head>
+<body class="font-normal antialiased bg-black text-gray-100">
+
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b bg-black/80 border-gray-900 slide-in-up animate-in">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="text-xl font-semibold tracking-tight">AJR DISCOS | MEDIA MANAGEMENT</span>
+        </div>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#home" class="text-sm font-medium transition-colors text-gray-300 hover:text-red-400">Home</a>
+          <a href="#compensation" class="text-sm font-medium transition-colors text-gray-300 hover:text-red-400">Compensation</a>
+          <a href="#responsibilities" class="text-sm font-medium transition-colors text-gray-300 hover:text-red-400">Role</a>
+          <a href="#growth" class="text-sm font-medium transition-colors text-gray-300 hover:text-red-400">Growth Plan</a>
+          <a href="#contact" class="text-sm font-medium transition-colors text-gray-300 hover:text-red-400">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 bg-red-500 text-white hover:bg-red-400">
+            Let's Work Together <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+          <button id="mobile-menu" class="md:hidden p-2 rounded-md transition-colors hover:bg-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1920&q=80')] bg-cover pt-24 pb-16">
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="space-y-8">
+          <div>
+            <h1 class="sm:text-5xl lg:text-6xl leading-tight text-4xl font-medium tracking-tight text-gray-100 slide-in-left animate-in">
+              YouTube Music Channel
+              <span class="bg-clip-text slide-in-left delay-200 animate-in font-medium text-transparent bg-gradient-to-r from-red-400 to-red-600">Media Manager</span>
+            </h1>
+            <p class="mt-6 text-lg max-w-xl text-gray-300 slide-in-left delay-300 animate-in">
+              Scale your 4M subscriber music channel to $1M+ monthly revenue with strategic management, diversified monetization, and performance-driven results.
+            </p>
+            <p class="mt-4 text-lg font-semibold text-red-400 slide-in-left delay-400 animate-in">
+              Proposal by David Hamilton
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-4 slide-in-left delay-500 animate-in">
+            <a href="#compensation" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-medium transition-all duration-200 hover:scale-105 text-white bg-red-500 hover:bg-red-400">
+              View Compensation <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+            <a href="#responsibilities" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-medium transition-all duration-200 bg-gray-900 text-gray-100 hover:bg-gray-800">
+              Learn More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+            </a>
+          </div>
+
+          <div class="flex items-center gap-6 slide-in-left delay-600 animate-in">
+            <div class="flex -space-x-2">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=320&q=80" class="w-10 h-10 rounded-full border-2 object-cover border-black">
+              <img src="https://images.unsplash.com/photo-1494790108377-2616c27c6e3c?w=320&q=80" class="w-10 h-10 rounded-full border-2 object-cover border-black">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=320&q=80" class="w-10 h-10 rounded-full border-2 object-cover border-black">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center border-2 border-black bg-red-500">
+                <span class="text-sm font-medium text-white">4M+</span>
+              </div>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-100">4 Million Subscribers</p>
+              <p class="text-sm text-gray-400">Ready to scale to $1M monthly</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative blur-in delay-700 animate-in">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80" alt="Music studio workspace" class="w-full h-[500px] object-cover">
+            <div class="absolute top-6 right-6 backdrop-blur-sm rounded-xl p-4 shadow-lg bg-black/90 slide-in-right delay-800 animate-in">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 flex bg-red-900 rounded-full items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-[20px] h-[20px] text-red-300"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg>
+                </div>
+                <div>
+                  <p class="text-sm font-medium text-gray-100">Revenue Growth</p>
+                  <p class="text-lg font-bold text-red-400">$1M+ Monthly</p>
+                </div>
+              </div>
+            </div>
+            <div class="absolute bottom-6 left-6 backdrop-blur-sm rounded-xl p-4 shadow-lg bg-black/90 slide-in-left delay-900 animate-in">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 flex bg-gray-800 rounded-full items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-[20px] h-[20px] text-gray-400"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                </div>
+                <div>
+                  <p class="text-sm font-medium text-gray-100">Subscriber Growth</p>
+                  <p class="text-lg font-bold text-red-400">100K+ Monthly</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Channel Stats Section -->
+  <section class="py-12 bg-gray-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-sm font-medium text-gray-500 mb-8 fade-in animate-in">Current Channel Performance</p>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
+        <div class="flex flex-col items-center justify-center gap-3 transition-colors text-gray-300 slide-in-up delay-100">
+          <div class="text-3xl font-bold text-red-400">4M</div>
+          <span class="text-sm font-medium">Subscribers</span>
+        </div>
+        <div class="flex flex-col items-center justify-center gap-3 transition-colors text-gray-300 slide-in-up delay-200">
+          <div class="text-3xl font-bold text-red-400">$255K+</div>
+          <span class="text-sm font-medium">Current Revenue</span>
+        </div>
+        <div class="flex flex-col items-center justify-center gap-3 transition-colors text-gray-300 slide-in-up delay-300">
+          <div class="text-3xl font-bold text-red-400">12M</div>
+          <span class="text-sm font-medium">Monthly Views</span>
+        </div>
+        <div class="flex flex-col items-center justify-center gap-3 transition-colors text-gray-300 slide-in-up delay-400">
+          <div class="text-3xl font-bold text-red-400">$12M</div>
+          <span class="text-sm font-medium">Revenue Target</span>
+        </div>
+        <div class="flex flex-col items-center justify-center gap-3 transition-colors text-gray-300 slide-in-up delay-500">
+          <div class="text-3xl font-bold text-red-400">9 Months</div>
+          <span class="text-sm font-medium">Timeline</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compensation Section -->
+  <section id="compensation" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-8">
+          <div>
+            <p class="text-sm font-medium uppercase tracking-wider slide-in-left text-red-400">Compensation Package</p>
+            <h2 class="mt-4 text-3xl lg:text-4xl tracking-tight font-medium text-gray-100 slide-in-left delay-200">
+              Performance-Driven<br>Compensation Structure
+            </h2>
+            <p class="mt-6 text-lg text-gray-400 slide-in-left delay-300">
+              Your success directly drives our channel's growth. This compensation model ensures you're rewarded for exceptional performance with uncapped earning potential.
+            </p>
+            <p class="mt-4 text-sm text-red-400 font-semibold slide-in-left delay-400">
+              *Profit share negotiable up to 5% after 36 months
+            </p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="p-6 rounded-xl border hover:shadow-lg transition-all duration-300 hover:scale-105 bg-black border-gray-800 scale-in delay-500">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 flex bg-red-900 rounded-lg items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-[20px] h-[20px] text-red-400"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
+                </div>
+                <div>
+                  <p class="text-2xl font-medium text-gray-100">$72K</p>
+                  <p class="text-sm text-gray-400">Base Salary</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 rounded-xl border hover:shadow-lg transition-all duration-300 hover:scale-105 bg-black border-gray-800 scale-in delay-600">
+              <div class="flex gap-3 items-center">
+                <div class="w-10 h-10 flex bg-green-900 rounded-lg items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-[20px] h-[20px] text-green-400"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg>
+                </div>
+                <div>
+                  <p class="text-2xl font-medium text-gray-100">2%</p>
+                  <p class="text-sm text-gray-400">Revenue Share</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide-in-left delay-700">
+            <a href="#growth" class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-200 hover:scale-105 bg-red-500 text-white hover:bg-red-400">
+              View Growth Plan <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=800&q=80" alt="Professional workspace" class="rounded-xl hover:scale-105 transition-transform duration-300 object-cover w-full h-64 blur-in delay-200">
+
+          <div class="bg-gray-950 border border-gray-800 rounded-xl p-6 hover:border-red-500 transition-colors duration-300">
+            <h3 class="text-lg font-semibold mb-4 text-gray-100">Compensation Calculator</h3>
+            <div class="space-y-4">
+              <div>
+                <label class="block text-sm text-gray-400 mb-2">Monthly Channel Revenue</label>
+                <input type="range" min="100000" max="2000000" value="500000" class="w-full accent-red-500" id="revenue-slider">
+                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                  <span>$100K</span>
+                  <span id="revenue-display">$500K</span>
+                  <span>$2M</span>
+                </div>
+              </div>
+              <div class="border-t border-gray-800 pt-4 space-y-2">
+                <div class="flex justify-between">
+                  <span class="text-sm text-gray-400">Base Salary:</span>
+                  <span class="text-sm text-gray-100">$6,000</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-sm text-gray-400">Performance Bonus:</span>
+                  <span class="text-sm text-gray-100" id="bonus-display">$8,000</span>
+                </div>
+                <div class="flex justify-between font-semibold pt-2 border-t border-gray-800">
+                  <span class="text-gray-100">Total Monthly:</span>
+                  <span class="text-red-400" id="total-display">$14,000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Responsibilities Section -->
+  <section id="responsibilities" class="py-20 bg-gray-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-sm font-medium uppercase tracking-wider slide-in-up text-red-400">Your Role</p>
+        <h2 class="mt-4 text-3xl lg:text-4xl tracking-tight font-medium text-gray-100 slide-in-up delay-200">
+          Drive Growth Across All Channels
+        </h2>
+        <p class="mt-6 text-lg text-gray-400 slide-in-up delay-300">
+          Lead comprehensive channel strategy, content optimization, and revenue diversification to achieve our $1M monthly target.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="p-8 rounded-xl border hover:shadow-lg transition-all duration-200 hover:-translate-y-1 hover:border-red-500 bg-black border-gray-800 scale-in delay-400">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-red-900">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-red-400"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-100">Channel Strategy</h3>
+          <p class="mb-4 text-gray-400">Develop and execute comprehensive growth strategies to scale from 4M to 10M+ subscribers.</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              Growth Planning & Analytics
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              Content Calendar Management
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              Algorithm Optimization
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-8 rounded-xl border hover:shadow-lg transition-all duration-200 hover:-translate-y-1 hover:border-red-500 bg-black border-gray-800 scale-in delay-500">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-green-900">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-400"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-100">Revenue Optimization</h3>
+          <p class="mb-4 text-gray-400">Diversify and maximize revenue streams including sponsorships, affiliates, and memberships.</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              Brand Partnership Deals
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              Affiliate Marketing
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              Membership Programs
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-8 rounded-xl border hover:shadow-lg transition-all duration-200 hover:-translate-y-1 hover:border-red-500 bg-black border-gray-800 scale-in delay-600">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-blue-900">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-blue-400"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-100">Community Management</h3>
+          <p class="mb-4 text-gray-400">Build and nurture our community across all platforms to maximize engagement and retention.</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              Multi-Platform Management
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              Fan Engagement Strategies
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              Live Stream Production
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-8 rounded-xl border hover:shadow-lg transition-all duration-200 hover:-translate-y-1 hover:border-red-500 bg-black border-gray-800 scale-in delay-700">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-orange-900">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-orange-400"><path d="M3 3v18h18"></path><path d="M7 12l3 3 7-7"></path></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-100">Analytics & Reporting</h3>
+          <p class="mb-4 text-gray-400">Monitor performance metrics and provide data-driven insights for continuous optimization.</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              Performance Tracking
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              ROI Analysis
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              Monthly Reports
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-8 rounded-xl border hover:shadow-lg transition-all duration-200 hover:-translate-y-1 hover:border-red-500 bg-black border-gray-800 scale-in delay-800">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-purple-900">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-purple-400"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline><polyline points="7.5 19.79 7.5 14.6 3 12"></polyline><polyline points="21 12 16.5 14.6 16.5 19.79"></polyline><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" x2="12" y1="22.08" y2="12"></line></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-100">Content Strategy</h3>
+          <p class="mb-4 text-gray-400">Plan and execute viral content strategies across YouTube, TikTok, Instagram, and other platforms.</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              Viral Video Planning
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              Cross-Platform Distribution
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              Trend Analysis
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-8 rounded-xl border hover:shadow-lg transition-all duration-200 hover:-translate-y-1 hover:border-red-500 bg-black border-gray-800 scale-in delay-900">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-indigo-900">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-400"><path d="M9 12l2 2 4-4"></path><path d="M21 12c-.35-10-15.65-10-16 0 .35 10 15.65 10 16 0Z"></path></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-100">Brand Partnerships</h3>
+          <p class="mb-4 text-gray-400">Negotiate and manage high-value brand deals and sponsorships in the music industry.</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              Deal Negotiation
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              Contract Management
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
+              Relationship Building
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== NEW: Growth Plan Section ========== -->
+  <section id="growth" class="py-20 bg-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-sm font-medium uppercase tracking-wider slide-in-up text-red-400">Growth Plan</p>
+        <h2 class="mt-4 text-3xl lg:text-4xl tracking-tight font-medium text-gray-100 slide-in-up delay-200">
+          9-Month Action Plan: The Roadmap to $50k/Month
+        </h2>
+        <p class="mt-6 text-lg text-gray-400 slide-in-up delay-300">
+          A granular, three-phase plan to build a powerful foundation and scale the channel's revenue and reach, setting the stage for the $1M/month goal.
+        </p>
+      </div>
+  
+      <div class="relative space-y-12">
+        <!-- The vertical line -->
+        <div class="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-gray-800 hidden lg:block" aria-hidden="true"></div>
+  
+        <!-- Phase 1 -->
+        <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+          <div class="mb-8 lg:mb-0 lg:pr-8 text-center lg:text-right scale-in animate-in">
+            <p class="text-sm uppercase tracking-wider text-red-400">Months 1-3</p>
+            <h3 class="text-3xl font-medium text-gray-100 mt-2">Phase 1: Foundation & Audience Growth</h3>
+            <p class="text-gray-400 mt-4">Establish the content engine, grow the email list, and prepare for initial product launch.</p>
+          </div>
+          <div class="relative p-8 rounded-xl border hover:shadow-lg transition-all duration-200 hover:-translate-y-1 hover:border-red-500 bg-gray-950 border-gray-800 scale-in delay-200 animate-in">
+            <div class="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-red-500 border-4 border-black hidden lg:flex items-center justify-center" aria-hidden="true"></div>
+            <h4 class="text-xl font-semibold mb-4 text-gray-100">Key Milestones:</h4>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400 mt-1 shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span><strong>Content Cadence:</strong> Finalize branding and lock in a 2-videos-per-week schedule.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400 mt-1 shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span><strong>Community Building:</strong> Launch "Feedback Fridays" live streams to grow a core audience and hit 50k subscribers.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400 mt-1 shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span><strong>Pre-Launch Prep:</strong> Develop the first digital product (Sample Pack) and grow email list to 5,000.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Phase 2 -->
+        <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+          <div class="lg:order-last lg:pl-8 mb-8 lg:mb-0 text-center lg:text-left scale-in animate-in">
+              <p class="text-sm uppercase tracking-wider text-red-400">Months 4-6</p>
+              <h3 class="text-3xl font-medium text-gray-100 mt-2">Phase 2: Monetization & Expansion</h3>
+              <p class="text-gray-400 mt-4">Launch the first product, integrate affiliate streams, and achieve the first $10k revenue month.</p>
+          </div>
+          <div class="lg:order-first relative p-8 rounded-xl border hover:shadow-lg transition-all duration-200 hover:-translate-y-1 hover:border-red-500 bg-gray-950 border-gray-800 scale-in delay-200 animate-in">
+            <div class="absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-red-500 border-4 border-black hidden lg:flex items-center justify-center" aria-hidden="true"></div>
+            <h4 class="text-xl font-semibold mb-4 text-gray-100">Key Milestones:</h4>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400 mt-1 shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span><strong>Product Launch:</strong> Execute launch for the first sample pack, targeting $5,000 in initial sales.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400 mt-1 shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span><strong>Affiliate Integration:</strong> Publish cornerstone "My Gear" videos and fully integrate affiliate links across all content.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400 mt-1 shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span><strong>Systemization:</strong> Hit 100k subscribers, achieve a consistent $10k/month revenue, and hire a freelance editor.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Phase 3 -->
+        <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+          <div class="mb-8 lg:mb-0 lg:pr-8 text-center lg:text-right scale-in animate-in">
+            <p class="text-sm uppercase tracking-wider text-red-400">Months 7-9</p>
+            <h3 class="text-3xl font-medium text-gray-100 mt-2">Phase 3: High-Value Scaling</h3>
+            <p class="text-gray-400 mt-4">Launch a high-ticket course, secure the first major brand sponsorship, and scale to $50k/month.</p>
+          </div>
+          <div class="relative p-8 rounded-xl border hover:shadow-lg transition-all duration-200 hover:-translate-y-1 hover:border-red-500 bg-gray-950 border-gray-800 scale-in delay-200 animate-in">
+            <div class="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-red-500 border-4 border-black hidden lg:flex items-center justify-center" aria-hidden="true"></div>
+            <h4 class="text-xl font-semibold mb-4 text-gray-100">Key Milestones:</h4>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400 mt-1 shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span><strong>High-Ticket Course:</strong> Develop and launch the flagship "Sound Design Masterclass" with a pre-order campaign.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400 mt-1 shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span><strong>Brand Partnerships:</strong> Create a professional media kit, pitch to 10 brands, and secure the first $5,000+ sponsorship.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-400 mt-1 shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span><strong>Scaling Revenue:</strong> Reach 250k subscribers and achieve the benchmark of $50,000 in total monthly revenue.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== END: Growth Plan Section ========== -->
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-sm font-medium uppercase tracking-wider slide-in-up text-red-400">Let's Work Together</p>
+        <h2 class="mt-4 text-3xl lg:text-4xl tracking-tight font-medium text-gray-100 slide-in-up delay-200">
+          Ready to Scale to $1M Monthly Revenue?
+        </h2>
+        <p class="mt-6 text-lg text-gray-400 slide-in-up delay-300">
+          This proposal outlines my comprehensive approach to transforming AJR DISCOS into a multi-million dollar media empire.
+        </p>
+        <p class="mt-4 text-lg font-semibold text-red-400 slide-in-up delay-400">
+          Proposal by David Hamilton - Media Management Specialist
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto">
+        <div class="bg-gray-950 border border-gray-800 rounded-2xl p-8 scale-in delay-500 hover:border-red-500 transition-colors duration-300">
+          <form class="space-y-6">
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-300 mb-2">First Name</label>
+                <input type="text" class="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg focus:outline-none focus:ring-2 text-gray-100 focus:ring-red-500 hover:border-red-400 transition-colors">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-300 mb-2">Last Name</label>
+                <input type="text" class="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg focus:outline-none focus:ring-2 text-gray-100 focus:ring-red-500 hover:border-red-400 transition-colors">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+              <input type="email" class="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg focus:outline-none focus:ring-2 text-gray-100 focus:ring-red-500 hover:border-red-400 transition-colors">
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">Interest Level</label>
+              <select class="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg focus:outline-none focus:ring-2 text-gray-100 focus:ring-red-500 hover:border-red-400 transition-colors">
+                <option>Very Interested</option>
+                <option>Interested</option>
+                <option>Need More Information</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">Questions or Comments</label>
+              <textarea rows="4" class="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg focus:outline-none focus:ring-2 text-gray-100 focus:ring-red-500 hover:border-red-400 transition-colors" placeholder="Let me know your thoughts on this proposal..."></textarea>
+            </div>
+
+            <button type="submit" class="w-full px-8 py-4 rounded-full font-medium transition-all duration-200 hover:scale-105 text-white bg-red-500 hover:bg-red-400">
+              Let's Discuss This Opportunity
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-950 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="text-sm text-gray-500">
+          © 2025 AJR DISCOS | MEDIA MANAGEMENT. Proposal by David Hamilton.
+        </div>
+        <div class="flex items-center gap-6 mt-4 md:mt-0">
+          <a href="#" class="text-sm text-gray-500 hover:text-red-400">Privacy Policy</a>
+          <a href="#" class="text-sm text-gray-500 hover:text-red-400">Terms of Service</a>
+          <a href="#contact" class="text-sm text-gray-500 hover:text-red-400">Contact David</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animation elements
+    document.querySelectorAll('.slide-in-left, .slide-in-right, .slide-in-up, .blur-in, .fade-in, .scale-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Compensation calculator
+    const slider = document.getElementById('revenue-slider');
+    const revenueDisplay = document.getElementById('revenue-display');
+    const bonusDisplay = document.getElementById('bonus-display');
+    const totalDisplay = document.getElementById('total-display');
+
+    function updateCalculator() {
+      const revenue = parseInt(slider.value);
+      const baseShown = 6000;
+      const bonus = Math.max(0, (revenue - 100000) * 0.02);
+
+      // Add milestone bonuses
+      let milestoneBonus = 0;
+      if (revenue >= 2000000) milestoneBonus = 100000;
+      else if (revenue >= 1000000) milestoneBonus = 50000;
+      else if (revenue >= 500000) milestoneBonus = 15000;
+
+      const total = baseShown + bonus + milestoneBonus;
+
+      revenueDisplay.textContent = '$' + (revenue / 1000) + 'K';
+      bonusDisplay.textContent = '$' + Math.round(bonus + milestoneBonus).toLocaleString();
+      totalDisplay.textContent = '$' + Math.round(total).toLocaleString();
+    }
+
+    if (slider) {
+        slider.addEventListener('input', updateCalculator);
+        updateCalculator(); // Initialize
+    }
+  </script>
+</body>
+</html>
